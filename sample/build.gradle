@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion 20
+  buildToolsVersion "20.0.0"
+
+  defaultConfig {
+    applicationId "com.github.fernandodev.easyratingdialog.sample"
+    minSdkVersion 8
+    targetSdkVersion 20
+    versionName project.VERSION_NAME
+    versionCode Integer.parseInt(project.VERSION_CODE)
+  }
+  lintOptions {
+    abortOnError false
+  }
+  buildTypes {
+    release {
+      runProguard false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  compile project(':library')
+}
